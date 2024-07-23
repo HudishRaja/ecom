@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <!-- carousel one -->
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="{% static 'img/banner_img_01.jpg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- carousel two -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="{% static 'img/banner_img_02.jpg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- carousel three -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="{% static 'img/banner_img_03.jpg' %}" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- End Banner Hero -->
+
+    <!-- Welcome Section -->
+    <section class="container py-5" >
+        <div class="row text-center pt-3">
+            <div class="m-auto">
+                <h1 class="h1 pb-4" style="white-space: 'nowrap'; font-family: 'Times New Roman', serif;">WELCOME TO SRI RAJAM INDUSTRIES</h1>
+                <p>
+                    We, SRI RAJAM INDUSTRIES., Established on 1995. We are an eminent Manufacturer of
+                    All Types of Steel Almirahs ,home & office furniture’s, which represents a new era of home decor
+                    products, stylish, innovation and endurance at a single platform.
+                </p>
+                <a type="button" class="btn btn-success mt-3" href="{% url 'ecom:about' %}">About us</a>
+            </div>
+        </div>
+
+    </section>
+    <!-- End of welcome section -->
+
+    <!-- Start Furniture Categories -->
+    <section class="bg-light py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 mb-5" style="font-family: 'Times New Roman', serif;">FURNITURE CATEGORIES</h1>
+
+            </div>
+        </div>
+        <div class="row justify-content-center mx-5" >
+            {% for category_furnitures in category_furniture %}
+                <div class="col-12 col-md-2  mt-3 ">
+                    <a href="{% url 'ecom:product' category_furnitures.name %}"><img src="{{category_furnitures.image.url}}" class="img-fluid border" alt="{{ category_furnitures.name }}"></a>
+                    {% load custom_filters %}
+                    <h5 class="text-center mt-3 mb-3">{{ category_furnitures.name|replace_underscore }}</h5>
+{#                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>#}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Furniture Categories -->
+
+    <!-- Start Interior Categories -->
+    <section class=" py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 mb-5" style="font-family: 'Times New Roman', serif;">INTERIOR CATEGORIES</h1>
+
+            </div>
+        </div>
+        <div class="row justify-content-center mx-5" >
+            {% for category_interiors in category_interior %}
+                <div class="col-12 col-md-2  mt-3 ">
+                    <a href="{% url 'ecom:product' category_interiors.name %}"><img src="{{category_interiors.image.url}}" class="img-fluid border" alt="{{ category_interiors.name }}"></a>
+                    {% load custom_filters %}
+                    <h5 class="text-center mt-3 mb-3">{{ category_interiors.name|replace_underscore }}</h5>
+{#                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>#}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Interior Categories -->
+
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1 mb-5" style="font-family: 'Times New Roman', serif;">FEATURED PRODUCT</h1>
+
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'ecom:home' %}">
+                            <img src="{% static 'img/feature_prod_01.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="{% url 'ecom:home' %}" class="h3 text-decoration-none text-dark " >Gym Weight</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'ecom:home' %}">
+                            <img src="{% static 'img/feature_prod_02.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="{% url 'ecom:home' %}" class="h3 text-decoration-none text-dark">Cloud Nike Shoes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'ecom:home' %}">
+                            <img src="{% static 'img/feature_prod_03.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body d-flex justify-content-center">
+
+                            <a href="{% url 'ecom:home' %}" class="h3 text-decoration-none text-dark">Summer Addides Shoes</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="card h-100">
+                        <a href="{% url 'ecom:home' %}">
+                            <img src="{% static 'img/feature_prod_03.jpg' %}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body d-flex justify-content-center">
+
+                            <a href="{% url 'ecom:home' %}" class="h3 text-decoration-none text-dark">Summer Addides Shoes</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Product -->
+
+{% endblock %}
+
+

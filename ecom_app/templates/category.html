@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+
+    <!-- Start Furniture Categories -->
+    <section class="bg-light py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 mb-5" style="font-family: 'Times New Roman', serif;">{{ title }}</h1>
+
+            </div>
+        </div>
+<div class="row justify-content-center">
+    {#  Dynamic Content of each category  #}
+    {% for category_product in category_products %}
+    <div class="col-12 col-md-2 col-sm-6 mt-3 mx-2">
+        <a href="{% url 'ecom:product' category_product.name %}"><img src="{{category_product.image.url}}" class="img-fluid border" alt="{{ category_product.name }}"></a>
+        {% load custom_filters %}
+        <h2 class="h5 text-center mt-3 mb-3">{{ category_product.name|replace_underscore}}</h2>
+
+    </div>
+    {% endfor %}
+
+</div>
+    </section>
+    <!-- End Furniture Categories -->
+
+{% endblock %}
+
+
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'sofa' %}"><img src="{% static 'img/cat07.jpg' %}" class="img-fluid border"></a>#}
+{#        <h5 class="text-center mt-3 mb-3">Sofa</h5>#}
+{##}
+{#    </div>#}
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'steel_chairs' %}"><img src="{% static 'img/cat05.jpg' %}" class="img-fluid border"></a>#}
+{#        <h2 class="h5 text-center mt-3 mb-3">Steel Chairs</h2>#}
+{##}
+{#    </div>#}
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'steel_cots' %}"><img src="{% static 'img/cat02.jpg' %}" class="img-fluid border"></a>#}
+{#        <h2 class="h5 text-center mt-3 mb-3">Steel Cots</h2>#}
+{##}
+{#    </div>#}
+{#    <div class="w-100 d-none d-md-block"></div>#}
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'steel_office_tables' %}"><img src="{% static 'img/cat03.webp' %}" class="img-fluid border"></a>#}
+{#        <h2 class="h5 text-center mt-3 mb-3">Steel Office Table</h2>#}
+{##}
+{#    </div>#}
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'steel_rack' %}"><img src="{% static 'img/cat04.webp' %}" class="img-fluid border"></a>#}
+{#        <h2 class="h5 text-center mt-3 mb-3">Steel Rack</h2>#}
+{##}
+{#    </div>#}
+{#    <div class="col-12 col-md-2 col-sm-6 mt-3">#}
+{#        <a href="{% url 'ecom:product' 'wooden_cot' %}"><img src="{% static 'img/cat06.jpg' %}" class="img-fluid border"></a>#}
+{#        <h2 class="h5 text-center mt-3 mb-3">Wooden cot</h2>#}
+{##}
+{#    </div>#}

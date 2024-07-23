@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+<section class=" py-2">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 " style="font-family: 'Times New Roman', serif;">STEEL ALMIRAH</h1>
+
+            </div>
+        </div>
+</section>
+<div class="container mt-3">
+    <div class="row gallery">
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah01_detail' %}"><img src="{% static 'img/almirah01.jpg' %}" class="img-fluid" alt="Image 1"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah02_detail' %}"><img src="{% static 'img/almirah02.jpg' %}" class="img-fluid" alt="Image 2"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah03_detail' %}"><img src="{% static 'img/almirah03.jpg' %}" class="img-fluid" alt="Image 3"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah04_detail' %}"><img src="{% static 'img/almirah04.jpg' %}" class="img-fluid" alt="Image 4"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah05_detail' %}"><img src="{% static 'img/almirah05.jpg' %}" class="img-fluid" alt="Image 5"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'ecom:steel_almirah06_detail' %}"><img src="{% static 'img/almirah06.jpg' %}" class="img-fluid" alt="Image 6"></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

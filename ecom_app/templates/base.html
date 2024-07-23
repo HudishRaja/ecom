@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>RajamIndustries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="e-commerce website for furniture and interior">
+    <meta name="keywords" content="e-commerce, furniture, interior">
+
+    <link rel="apple-touch-icon" href="{% static 'img/apple-icon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- new -->
+    <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+    <link rel="stylesheet" href="{% static 'css/interior.css' %}">
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <!-- Font Awesome -->
+    {#    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">#}<!-- This not works -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}">
+    <!-- TemplateMo 559 Zay Shop https://templatemo.com/tm-559-zay-shop -->
+    <style>
+    #templatemo_main_nav .navbar-nav {
+        flex-wrap: nowrap;
+    }
+
+    #templatemo_main_nav .nav-item {
+        white-space: nowrap;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    {% include 'includes/header.html' %}
+
+    <!-- dynamic content -->
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- footer -->
+    {% include 'includes/footer.html' %}
+
+    <!-- Start Script -->
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/templatemo.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <!-- End Script -->
+
+    <!-- Start Slider Script -->
+    <script src="{% static 'js/slick.min.js' %}/"></script>
+    <script>
+        $('#carousel-related-product').slick({
+            infinite: true,
+            arrows: false,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            dots: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
+        });
+    </script>
+    <!-- End Slider Script -->
+
+</body>
+
+</html>

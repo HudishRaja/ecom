@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+
+
+    <!-- Start Interior Categories -->
+    <section class="bg-light py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1 mb-5" style="font-family: 'Times New Roman', serif;">INTERIOR CATEGORIES</h1>
+
+            </div>
+        </div>
+        <div class="row justify-content-center" >
+            <div class="col-12 col-md-2  mt-3">
+                <a href="#"><img src="{% static 'img/category_img_01.jpg' %}" class=" img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Kitchen Interiors</h5>
+
+            </div>
+            <div class="col-12 col-md-2  mt-3">
+                <a href="#"><img src="{% static 'img/category_img_02.jpg' %}" class=" img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Bedroom Interiors</h2>
+
+            </div>
+            <div class="col-12 col-md-2  mt-3">
+                <a href="#"><img src="{% static 'img/category_img_03.jpg' %}" class=" img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Living Hall Interiors</h2>
+
+            </div>
+            <div class="col-12 col-md-2  mt-3">
+                <a href="#"><img src="{% static 'img/category_img_02.jpg' %}" class=" img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Bathroom Interiors</h2>
+
+            </div>
+            <div class="col-12 col-md-2  mt-3">
+                <a href="#"><img src="{% static 'img/category_img_03.jpg' %}" class=" img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Office Interiors</h2>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Interior Categories -->
+
+
+{% endblock %}

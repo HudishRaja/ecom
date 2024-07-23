@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content%}
+{% load static %}
+<section class=" py-2">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                {% load custom_filters %}
+                <h1 class="h1 " style="font-family: 'Times New Roman', serif;">{{ cat_id|replace_underscore }}</h1>
+
+            </div>
+        </div>
+</section>
+<div class="container mt-3">
+    <div class="row gallery">
+        {% for product in products %}
+
+                {% if product.sub_category == cat_id %}
+                    <div class="col-md-3">
+                        <a href="{% url 'ecom:detail' cat_id=cat_id single_id=product.id_num %}"><img src="{{product.image.url}}" class="img-fluid"  alt="Image "></a>
+                    </div>
+                {% endif %}
+
+        {% endfor %}
+    </div>
+</div>
+
+
+<!-- Include Bootstrap JS (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
+{#<div class="modal" id="myModal">#}
+{#    <span class="close" id="closeBtn">&times;</span>#}
+{#    <span class="prev" id="prevBtn">&#10094;</span>#}
+{#    <span class="next" id="nextBtn">&#10095;</span>#}
+{#    <div class="modal-content">#}
+{#        <img id="modalImg" src="" alt="">#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<script>#}
+{#    const gallery = document.querySelector('.gallery');#}
+{#    const modal = document.getElementById('myModal');#}
+{#    const modalImg = document.getElementById('modalImg');#}
+{#    const closeBtn = document.getElementById('closeBtn');#}
+{#    const prevBtn = document.getElementById('prevBtn');#}
+{#    const nextBtn = document.getElementById('nextBtn');#}
+{##}
+{#    let currentIndex = 0;#}
+{#    const images = document.querySelectorAll('.gallery img');#}
+{##}
+{#    function openModal(index) {#}
+{#        modal.style.display = 'block';#}
+{#        modalImg.src = images[index].src;#}
+{#        currentIndex = index;#}
+{#    }#}
+{##}
+{#    function closeModal() {#}
+{#        modal.style.display = 'none';#}
+{#    }#}
+{##}
+{#    function showNext() {#}
+{#        currentIndex = (currentIndex + 1) % images.length;#}
+{#        modalImg.src = images[currentIndex].src;#}
+{#    }#}
+{##}
+{#    function showPrev() {#}
+{#        currentIndex = (currentIndex - 1 + images.length) % images.length;#}
+{#        modalImg.src = images[currentIndex].src;#}
+{#    }#}
+{##}
+{#    images.forEach((img, index) => {#}
+{#        img.addEventListener('click', () => openModal(index));#}
+{#    });#}
+{##}
+{#    closeBtn.addEventListener('click', closeModal);#}
+{#    nextBtn.addEventListener('click', showNext);#}
+{#    prevBtn.addEventListener('click', showPrev);#}
+{##}
+{#    window.addEventListener('click', (event) => {#}
+{#        if (event.target === modal) {#}
+{#            closeModal();#}
+{#        }#}
+{#    });#}
+{#</script>#}
